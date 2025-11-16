@@ -1,6 +1,4 @@
-# monobank-dwh-project
-
-# 3: Data Warehouse Modeling (Monobank)
+# Data Warehouse Modeling (Monobank)
 
 This project is a 3-layer data warehouse for the Monobank business case, built in BigQuery.
 
