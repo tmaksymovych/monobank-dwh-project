@@ -18,8 +18,8 @@ The mart layer consists of 1 fact table and 3 dimension tables.
 * **Dimensions:** `dim_customer`, `dim_date`, `dim_category`
 
 ## 4. Data Lineage
-(Here, you will drag and drop the `data-lineage.png` image you created)
-![Data Lineage](images/data-lineage.png)
+<img width="1859" height="730" alt="image" src="https://github.com/user-attachments/assets/aeca1950-7a9b-4ec7-939b-aef0a66a0458" />
+
 
 ## 5. How to Run
 The SQL scripts in the `/sql/` folder must be run in numerical order:
