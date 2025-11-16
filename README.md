@@ -22,7 +22,7 @@ The mart layer consists of 1 fact table and 3 dimension tables.
 
 
 ## 5. How to Run
-The Big Querry SQL scripts in the `/sql/` folder must be run in numerical order:
+The BigQuerry SQL scripts in the `/sql/` folder must be run in numerical order:
 1.  `01_create_raw.sql`
 2.  `02_create_stage.sql`
 3.  `03_create_mart.sql`
