@@ -1,9 +1,8 @@
-('st-005', 'cust-005', 'agent-02', 'Card not working', 'closed', '120'),
-    ('st-006', 'cust-007', 'agent-01', 'Platinum benefits', 'closed', '30'),
-    ('st-007', 'cust-004', 'agent-03', 'How to block card', 'closed', '2'),
-    ('st-008', 'cust-008', 'agent-02', 'App is slow', 'closed', '45'),
-    ('st-009', 'cust-010', 'agent-01', 'Mistake in transaction', 'pending', NULL),
-    ('st-010', 'cust-006', 'agent-03', 'Failed login', 'closed', 'N/A');
+Truncate table stage_hordiienko.customers;
+Truncate table stage_hordiienko.transactions;
+Truncate table stage_hordiienko.cashback_accruals;
+Truncate table stage_hordiienko.jars;
+Truncate table stage_hordiienko.support_tickets;
 
 
 
@@ -72,5 +71,15 @@ Select
 From
     raw_hordiienko.support_tickets;
 
-
-
+Update mart_hordiienko.dim_customers dim
+Set 
+    dim.is_active = False,
+    dim.valid_to = current_date()
+From stage_hordiienko.customers stage
+Where     
+    dim.customer_id = stage.customer_id
+    And dim.is_active = True
+    And (
+        dim.city != stage.city
+        Or dim.client_level != stage.client_level
+    );
